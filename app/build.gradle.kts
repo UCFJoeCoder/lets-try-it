@@ -97,4 +97,7 @@ dependencies {
 
     // GSON
     implementation("com.google.code.gson:gson:2.10.1")
+
+    // Coil (for async image downloading)
+    implementation("io.coil-kt:coil-compose:2.5.0")
 }

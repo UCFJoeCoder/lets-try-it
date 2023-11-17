@@ -126,13 +126,12 @@ fun MarvelScreen() {
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .wrapContentHeight()
-                                .padding(vertical = 25.dp),
+                                .wrapContentHeight(),
                             horizontalArrangement = Arrangement.Center,
                             verticalAlignment = Alignment.CenterVertically
                         )
                         {
-                            Text("List of Characters")
+                            Text("List of Marvel Characters")
                         }
                     }
                     if (characterDataWrapper.data != null) {

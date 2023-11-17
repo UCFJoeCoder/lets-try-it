@@ -1,8 +1,14 @@
 package com.ucfjoe.letstryit.marvel
 
+import android.content.Context
+import androidx.compose.ui.platform.LocalContext
+import coil.request.ImageRequest
 import com.ucfjoe.letstryit.marvel.apidata.CharacterDataWrapper
+import com.ucfjoe.letstryit.marvel.apidata.Image
 import retrofit2.HttpException
+import retrofit2.http.Query
 import java.io.IOException
+import java.lang.reflect.Parameter
 
 class MarvelResponse<T>(
     val result: T?,
@@ -12,6 +18,16 @@ class MarvelResponse<T>(
         return result != null
     }
 }
+
+//fun getMarvelImage(image: Image, context: Context): ImageRequest {
+//    return ImageRequest
+//        .Builder(context)
+//        .data("${image.path}.${image.extension}")
+//        .addHeader("apikey", Constants.API_KEY)
+//        .addHeader("hash", Constants.hash())
+//        .addHeader("ts", Constants.ts)
+//        .build()
+//}
 
 
 suspend fun getCharactersStartsWith(nameStartsWith: String): MarvelResponse<CharacterDataWrapper?> {
