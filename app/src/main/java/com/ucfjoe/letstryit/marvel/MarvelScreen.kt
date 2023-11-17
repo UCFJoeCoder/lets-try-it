@@ -65,6 +65,14 @@ fun MarvelScreen() {
             }
         }
 
+        if (Constants.API_KEY.isBlank()) {
+            errorMessage =
+                "Developer must register for api key with developer.marvel.com\n\n" +
+                        "Developer must create apikey.properties file at the root of the project\n\n" +
+                        "Developer must add MARVEL_API_KEY and MARVEL_PRIVATE_KEY to apikey.properties file"
+            showMessageDialog.value = true
+        }
+
         Column(
             modifier = Modifier.padding(paddingValues)
         )
@@ -90,6 +98,7 @@ fun MarvelScreen() {
             )
             Button(
                 modifier = Modifier.fillMaxWidth(),
+                enabled = Constants.API_KEY.isNotBlank(),
                 onClick = {
                     if (searchText.isNotBlank()) {
                         coroutineScope.launch {

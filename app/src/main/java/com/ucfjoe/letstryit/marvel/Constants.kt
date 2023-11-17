@@ -12,7 +12,7 @@ class Constants {
         val ts = Timestamp(System.currentTimeMillis()).time.toString()
 
         const val API_KEY = BuildConfig.MARVEL_API_KEY
-        private const val PRIVATE_KEY = BuildConfig.MARVEL_API_KEY
+        const val PRIVATE_KEY = BuildConfig.MARVEL_PRIVATE_KEY
         //const val limit = 100
 
         fun hash(): String {
