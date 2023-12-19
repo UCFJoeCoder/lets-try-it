@@ -5,9 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.ucfjoe.letstryit.screens.database.presentation.DatabaseScreen
 import com.ucfjoe.letstryit.screens.flowcombine.MutableStateFlowCombineScreen
-import com.ucfjoe.letstryit.screens.marvel.MarvelScreen
 import com.ucfjoe.letstryit.screens.retrofitexample.RetrofitScreen
 import com.ucfjoe.letstryit.screens.themeexample.ThemeScreen
 
@@ -33,17 +31,11 @@ fun Navigation(
                 onThemeUpdated = onThemeUpdated,
                 requestPhoneDarkModeEnabled = requestPhoneDarkModeEnabled)
         }
-        composable(route = Screen.MarvelScreen.route) {
-            MarvelScreen()
-        }
         composable(route = Screen.RetrofitScreen.route) {
             RetrofitScreen()
         }
         composable(route = Screen.FlowCombineScreen.route) {
             MutableStateFlowCombineScreen()
-        }
-        composable(route = Screen.DatabaseScreen.route) {
-            DatabaseScreen()
         }
     }
 }

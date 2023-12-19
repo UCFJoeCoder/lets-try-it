@@ -5,14 +5,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
-import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Face
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.outlined.AddCircle
-import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.material.icons.outlined.Face
-import androidx.compose.material.icons.outlined.Favorite
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
@@ -110,12 +106,6 @@ object DrawerParams {
             screen = Screen.ThemeExampleScreen
         ),
         NavigationItem(
-            "Marvel",
-            selectedIcon = Icons.Filled.CheckCircle,
-            unselectedIcon = Icons.Outlined.CheckCircle,
-            screen = Screen.MarvelScreen
-        ),
-        NavigationItem(
             "Retrofit",
             selectedIcon = Icons.Filled.AddCircle,
             unselectedIcon = Icons.Outlined.AddCircle,
@@ -127,12 +117,6 @@ object DrawerParams {
             selectedIcon = Icons.Filled.Face,
             unselectedIcon = Icons.Outlined.Face,
             screen = Screen.FlowCombineScreen
-        ),
-        NavigationItem(
-            "Database",
-            selectedIcon = Icons.Filled.Favorite,
-            unselectedIcon = Icons.Outlined.Favorite,
-            screen = Screen.DatabaseScreen
         )
     )
 }

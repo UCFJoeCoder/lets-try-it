@@ -1,10 +1,7 @@
-import java.util.Properties
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
-    id("app.cash.sqldelight")
 }
 
 android {
@@ -22,19 +19,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-
-        val keyStoreFile = project.rootProject.file("apikey.properties")
-        val properties = Properties()
-        properties.load(keyStoreFile.inputStream())
-        buildConfigField(
-            "String",
-            "MARVEL_API_KEY",
-            properties.getProperty("MARVEL_API_KEY") ?: "")
-        buildConfigField(
-            "String",
-            "MARVEL_PRIVATE_KEY",
-            properties.getProperty("MARVEL_PRIVATE_KEY") ?: ""
-        )
     }
 
     buildTypes {
@@ -107,23 +91,5 @@ dependencies {
     // Coil (for async image downloading)
     implementation("io.coil-kt:coil-compose:2.5.0")
 
-    // Room database
-    val room_version = "2.6.1"
-    implementation("androidx.room:room-runtime:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-ktx:$room_version")
-
-    // SQL Delight
-//    implementation("com.squareup.sqldelight:android-driver:1.5.3")
-//    implementation("com.squareup.sqldelight:coroutines-extensions-jvm:1.5.3")
-    implementation("app.cash.sqldelight:coroutines-extensions:2.0.1")
-    implementation("app.cash.sqldelight:android-driver:2.0.1")
 }
 
-sqldelight {
-    databases {
-        create("TeamDatabase") {
-            packageName.set("com.ucfjoe.letstryit")
-        }
-    }
-}
